@@ -1,0 +1,1000 @@
+[
+  {
+    "case_id": "E2_001",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Overnight sleep | Supportive environment | Stable physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Overnight sleep",
+      "environment_condition": "Supportive",
+      "physiology_condition": "Stable"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 74.0,
+        "current": 76.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 52.0,
+        "current": 50.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 1.8,
+        "current": 1.9,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "23:10",
+      "goal": "sleep",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult medical-ward inpatient admitted for overnight observation; no current procedure. Pain, fever and reason for any physiological change are not established in this scenario.",
+      "patient_note": "Patient wants to sleep, prefers warm lighting, routinely uses white noise for sleep, and also finds gentle rain/nature sounds acceptable. White noise is the first choice if optional audio is changed. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 85%; warm, neutral or cool tones allowed. Optional sound allowed up to 25% volume for up to 20 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 18.0,
+        "ambient_noise_dba_5min_laeq": 42.0,
+        "description": "Dim warm room with low steady ward hum; gentle nature sounds are already playing at low volume; no repeated nearby alarms."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 22.0,
+      "tone": "WARM",
+      "sound": "NATURE_SOUNDS",
+      "volume": 10.0,
+      "remaining_minutes": 12.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "WHITE_NOISE",
+      "preferred_tones": [
+        "WARM"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 85.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 25.0,
+      "max_duration_minutes": 20.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_002",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Overnight sleep | Supportive environment | Changed physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Overnight sleep",
+      "environment_condition": "Supportive",
+      "physiology_condition": "Changed"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 74.0,
+        "current": 88.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 52.0,
+        "current": 38.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 1.8,
+        "current": 2.8,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "23:10",
+      "goal": "sleep",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult medical-ward inpatient admitted for overnight observation; no current procedure. Pain, fever and reason for any physiological change are not established in this scenario.",
+      "patient_note": "Patient wants to sleep, prefers warm lighting, routinely uses white noise for sleep, and also finds gentle rain/nature sounds acceptable. White noise is the first choice if optional audio is changed. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 85%; warm, neutral or cool tones allowed. Optional sound allowed up to 25% volume for up to 20 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 18.0,
+        "ambient_noise_dba_5min_laeq": 42.0,
+        "description": "Dim warm room with low steady ward hum; gentle nature sounds are already playing at low volume; no repeated nearby alarms."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 22.0,
+      "tone": "WARM",
+      "sound": "NATURE_SOUNDS",
+      "volume": 10.0,
+      "remaining_minutes": 12.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "WHITE_NOISE",
+      "preferred_tones": [
+        "WARM"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 85.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 25.0,
+      "max_duration_minutes": 20.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_003",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Overnight sleep | Disruptive environment | Stable physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Overnight sleep",
+      "environment_condition": "Disruptive",
+      "physiology_condition": "Stable"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 74.0,
+        "current": 76.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 52.0,
+        "current": 50.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 1.8,
+        "current": 1.9,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "23:10",
+      "goal": "sleep",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult medical-ward inpatient admitted for overnight observation; no current procedure. Pain, fever and reason for any physiological change are not established in this scenario.",
+      "patient_note": "Patient wants to sleep, prefers warm lighting, routinely uses white noise for sleep, and also finds gentle rain/nature sounds acceptable. White noise is the first choice if optional audio is changed. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 85%; warm, neutral or cool tones allowed. Optional sound allowed up to 25% volume for up to 20 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 180.0,
+        "ambient_noise_dba_5min_laeq": 60.0,
+        "description": "Room is brighter than desired for sleep; intermittent corridor speech, door closures and equipment tones are audible despite low-volume nature sounds."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 55.0,
+      "tone": "COOL",
+      "sound": "NATURE_SOUNDS",
+      "volume": 10.0,
+      "remaining_minutes": 12.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "WHITE_NOISE",
+      "preferred_tones": [
+        "WARM"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 85.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 25.0,
+      "max_duration_minutes": 20.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_004",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Overnight sleep | Disruptive environment | Changed physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Overnight sleep",
+      "environment_condition": "Disruptive",
+      "physiology_condition": "Changed"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 74.0,
+        "current": 88.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 52.0,
+        "current": 38.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 1.8,
+        "current": 2.8,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "23:10",
+      "goal": "sleep",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult medical-ward inpatient admitted for overnight observation; no current procedure. Pain, fever and reason for any physiological change are not established in this scenario.",
+      "patient_note": "Patient wants to sleep, prefers warm lighting, routinely uses white noise for sleep, and also finds gentle rain/nature sounds acceptable. White noise is the first choice if optional audio is changed. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 85%; warm, neutral or cool tones allowed. Optional sound allowed up to 25% volume for up to 20 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 180.0,
+        "ambient_noise_dba_5min_laeq": 60.0,
+        "description": "Room is brighter than desired for sleep; intermittent corridor speech, door closures and equipment tones are audible despite low-volume nature sounds."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 55.0,
+      "tone": "COOL",
+      "sound": "NATURE_SOUNDS",
+      "volume": 10.0,
+      "remaining_minutes": 12.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "WHITE_NOISE",
+      "preferred_tones": [
+        "WARM"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 85.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 25.0,
+      "max_duration_minutes": 20.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_005",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Daytime wakefulness | Supportive environment | Stable physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Daytime wakefulness",
+      "environment_condition": "Supportive",
+      "physiology_condition": "Stable"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 82.0,
+        "current": 80.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 38.0,
+        "current": 40.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 2.7,
+        "current": 2.8,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "10:30",
+      "goal": "awake",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult inpatient on a rehabilitation ward, seated in bed and trying to remain alert during the day. No procedure underway. No current pain or fever assessment is provided.",
+      "patient_note": "Patient wants to stay awake for rehabilitation, prefers neutral lighting, and likes familiar calming music at low volume. The music is currently playing and the patient would like it continued if staff permit. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 90%; warm, neutral or cool tones allowed. Optional sound allowed up to 20% volume for up to 15 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 520.0,
+        "ambient_noise_dba_5min_laeq": 50.0,
+        "description": "Bright daytime room with ordinary ward activity; no repeated alarms."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 65.0,
+      "tone": "NEUTRAL",
+      "sound": "PREFERRED_CALMING_MUSIC",
+      "volume": 8.0,
+      "remaining_minutes": 10.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "PREFERRED_CALMING_MUSIC",
+      "preferred_tones": [
+        "NEUTRAL"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 90.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 20.0,
+      "max_duration_minutes": 15.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_006",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Daytime wakefulness | Supportive environment | Changed physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Daytime wakefulness",
+      "environment_condition": "Supportive",
+      "physiology_condition": "Changed"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 82.0,
+        "current": 74.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 38.0,
+        "current": 49.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 2.7,
+        "current": 2.2,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "10:30",
+      "goal": "awake",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult inpatient on a rehabilitation ward, seated in bed and trying to remain alert during the day. No procedure underway. No current pain or fever assessment is provided.",
+      "patient_note": "Patient wants to stay awake for rehabilitation, prefers neutral lighting, and likes familiar calming music at low volume. The music is currently playing and the patient would like it continued if staff permit. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 90%; warm, neutral or cool tones allowed. Optional sound allowed up to 20% volume for up to 15 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 520.0,
+        "ambient_noise_dba_5min_laeq": 50.0,
+        "description": "Bright daytime room with ordinary ward activity; no repeated alarms."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 65.0,
+      "tone": "NEUTRAL",
+      "sound": "PREFERRED_CALMING_MUSIC",
+      "volume": 8.0,
+      "remaining_minutes": 10.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "PREFERRED_CALMING_MUSIC",
+      "preferred_tones": [
+        "NEUTRAL"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 90.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 20.0,
+      "max_duration_minutes": 15.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_007",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Daytime wakefulness | Disruptive environment | Stable physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Daytime wakefulness",
+      "environment_condition": "Disruptive",
+      "physiology_condition": "Stable"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 82.0,
+        "current": 80.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 38.0,
+        "current": 40.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 2.7,
+        "current": 2.8,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "10:30",
+      "goal": "awake",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult inpatient on a rehabilitation ward, seated in bed and trying to remain alert during the day. No procedure underway. No current pain or fever assessment is provided.",
+      "patient_note": "Patient wants to stay awake for rehabilitation, prefers neutral lighting, and likes familiar calming music at low volume. The music is currently playing and the patient would like it continued if staff permit. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 90%; warm, neutral or cool tones allowed. Optional sound allowed up to 20% volume for up to 15 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 55.0,
+        "ambient_noise_dba_5min_laeq": 48.0,
+        "description": "Room is unusually dim for daytime wakefulness; otherwise relatively quiet."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 25.0,
+      "tone": "WARM",
+      "sound": "PREFERRED_CALMING_MUSIC",
+      "volume": 8.0,
+      "remaining_minutes": 10.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "PREFERRED_CALMING_MUSIC",
+      "preferred_tones": [
+        "NEUTRAL"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 90.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 20.0,
+      "max_duration_minutes": 15.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_008",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Daytime wakefulness | Disruptive environment | Changed physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Daytime wakefulness",
+      "environment_condition": "Disruptive",
+      "physiology_condition": "Changed"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 82.0,
+        "current": 74.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 38.0,
+        "current": 49.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 2.7,
+        "current": 2.2,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      }
+    },
+    "context": {
+      "local_time": "10:30",
+      "goal": "awake",
+      "reported_activity": "RESTING",
+      "procedure": false,
+      "clinical_context": "Adult inpatient on a rehabilitation ward, seated in bed and trying to remain alert during the day. No procedure underway. No current pain or fever assessment is provided.",
+      "patient_note": "Patient wants to stay awake for rehabilitation, prefers neutral lighting, and likes familiar calming music at low volume. The music is currently playing and the patient would like it continued if staff permit. No current environmental complaint is recorded.",
+      "staff_note": "Lighting changes allowed from 20% to 90%; warm, neutral or cool tones allowed. Optional sound allowed up to 20% volume for up to 15 minutes; no procedure underway.",
+      "environment_measurements": {
+        "bedside_illuminance_lux_5min_avg": 55.0,
+        "ambient_noise_dba_5min_laeq": 48.0,
+        "description": "Room is unusually dim for daytime wakefulness; otherwise relatively quiet."
+      },
+      "source_activity": {
+        "reference": "Synthetic five-minute reference window.",
+        "current": "Synthetic adjacent five-minute current window.",
+        "posture": "Not independently varied beyond the stated hospital context.",
+        "synthetic_overlay_note": "Physiology and environmental manipulations are independent by design; do not infer that the room caused the physiological change."
+      }
+    },
+    "room": {
+      "brightness": 25.0,
+      "tone": "WARM",
+      "sound": "PREFERRED_CALMING_MUSIC",
+      "volume": 8.0,
+      "remaining_minutes": 10.0
+    },
+    "preferences": {
+      "lighting_changes_allowed": true,
+      "sound_changes_allowed": true,
+      "sound_opt_out_original": false,
+      "preferred_sound": "PREFERRED_CALMING_MUSIC",
+      "preferred_tones": [
+        "NEUTRAL"
+      ],
+      "prohibited_tones": [],
+      "prohibited_sounds": []
+    },
+    "staff": {
+      "lighting_locked": false,
+      "brightness_min": 20.0,
+      "brightness_max": 90.0,
+      "allowed_tones": [
+        "WARM",
+        "NEUTRAL",
+        "COOL"
+      ],
+      "sound_allowed": true,
+      "allowed_sounds": [
+        "NATURE_SOUNDS",
+        "PREFERRED_CALMING_MUSIC",
+        "WHITE_NOISE"
+      ],
+      "max_volume": 20.0,
+      "max_duration_minutes": 15.0,
+      "no_sound_during_procedure": true
+    }
+  },
+  {
+    "case_id": "E2_009",
+    "phase": "experiment2_controlled_synthetic_12",
+    "title": "Postoperative evening rest | Supportive environment | Stable physiology",
+    "provenance": "Researcher-authored synthetic hospital scenario. HR, RMSSD, EDA, bedside illuminance and ambient dBA are illustrative values for controlled software evaluation; not WESAD and not patient observations.",
+    "design_labels": {
+      "base_situation": "Postoperative evening rest",
+      "environment_condition": "Supportive",
+      "physiology_condition": "Stable"
+    },
+    "physiology": {
+      "hr_bpm": {
+        "reference": 90.0,
+        "current": 91.0,
+        "unit": "bpm",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min HR summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "rmssd_ms": {
+        "reference": 30.0,
+        "current": 29.0,
+        "unit": "ms",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min RMSSD summary",
+          "scenario_assumption": "ASSUMED_GOOD_SYNTHETIC_FOR_SOFTWARE_TESTING",
+          "assumption_note": "Researcher-authored synthetic paired five-minute summaries for controlled software evaluation; not patient observations and not clinically validated."
+        }
+      },
+      "eda_us": {
+        "reference": 2.9,
+        "current": 3.0,
+        "unit": "microsiemens",
+        "reference_quality": "GOOD",
+        "current_quality": "GOOD",
+        "reference_window_minutes": 5,
+        "current_window_minutes": 5,
+        "comparable": true,
+        "source_quality": {
+          "baseline_gap_minutes": 0,
+          "summary_method": "Researcher-authored synthetic 5-min mean EDA summary",
