@@ -1,0 +1,16 @@
+# Secrets and local environment
+.env
+*.key
+*.pem
+__pycache__/
+.ipynb_checkpoints/
+
+# Paid-run outputs and protected human-review data
+AHR_Luna_30_Study/
+*_RESULTS.zip
+*nurse*.csv
+*NURSE*.csv
+
+# OS/editor
+.DS_Store
+.vscode/
