@@ -1,0 +1,9 @@
+factor,field,comparisons,agreement,agreement_rate,model_change_rate,nurse_change_rate
+environment,clinical_review_recommended,30,28,0.9333333333333333,0.06666666666666667,0.0
+environment,light_tone,30,30,1.0,0.0,0.0
+environment,lighting_action,30,17,0.5666666666666667,0.9333333333333333,0.5
+environment,resulting_sound_state,30,20,0.6666666666666666,0.3333333333333333,0.0
+physiology,clinical_review_recommended,30,22,0.7333333333333333,0.6,0.3333333333333333
+physiology,light_tone,30,30,1.0,0.0,0.0
+physiology,lighting_action,30,23,0.7666666666666667,0.06666666666666667,0.16666666666666666
+physiology,resulting_sound_state,30,30,1.0,0.0,0.0
