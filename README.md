@@ -17,6 +17,7 @@ notebooks/
   05_mechanical_repair_replay.ipynb
   06_experiment2_final_agent_v4.ipynb
 data/
+  experiment1_formal_30_cases.json
   experiment2_cases.json
   evidence_table.json
 results/
@@ -117,6 +118,14 @@ APPROVE_PAID_CALLS = True
 Run all cells again.
 
 The notebook writes a frozen run contract/fingerprint, logs each request/output, and is resume-safe. The provider endpoint, model availability and prices can change over time, so a later reproduction is a new stochastic execution of the same software logic rather than a guarantee of byte-identical outputs.
+
+## Experiment 1 data
+
+`data/experiment1_formal_30_cases.json` is the exact frozen 30-case input dataset embedded in the Experiment 1 notebook. Its SHA-256 is:
+
+`a09d532e3d6d8bcd051e91699d3fb9f933a1f0ae565f6d0f159fc2cb7c735b8b`
+
+The notebook remains the authoritative executable artifact, but the separate JSON makes the formal dataset easier to inspect and reuse.
 
 ## Experiment 2 data
 
