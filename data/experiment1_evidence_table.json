@@ -1,0 +1,348 @@
+[
+  {
+    "id": "E01",
+    "kind": "research",
+    "topic": "lighting",
+    "source": "Giménez et al. (2017)",
+    "proposal_key": "gimenez2017lighting",
+    "doi": "10.1111/jsr.12470",
+    "url": "https://doi.org/10.1111/jsr.12470",
+    "verified_from": "Publisher summary, methods and selected results sections",
+    "checked_date": "2026-09-28",
+    "study_design": "Controlled clinical study; 196 cardiology patients",
+    "exposure": "Combined 24-hour lighting: brighter daytime exposure and lower night lighting over hospitalization.",
+    "finding": "Actigraphic sleep duration increased by about 5.9 minutes per hospitalization day; lighting appraisal improved. Subjective sleep, alertness, anxiety and depression did not differ between groups.",
+    "limitations": "Combined exposure over days does not isolate tone, establish acute calming, or validate device percentages. One participant withdrew with intervention-induced migraine.",
+    "ahr_application": "Researcher mapping: day/night brightness direction may be considered; the prototype clock cutoff and step size are not study prescriptions.",
+    "role": "action_support",
+    "context_fields": [
+      "lighting"
+    ],
+    "lighting_actions": [
+      "INCREASE",
+      "DECREASE",
+      "NO_CHANGE"
+    ],
+    "sounds": [],
+    "condition": "time_of_day"
+  },
+  {
+    "id": "E02",
+    "kind": "research",
+    "topic": "sound",
+    "source": "Fan & Baharum (2024)",
+    "proposal_key": "fan2024natural",
+    "doi": "10.1080/10253890.2024.2402519",
+    "url": "https://doi.org/10.1080/10253890.2024.2402519",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Systematic review and meta-analysis",
+    "exposure": "Natural sounds compared with quiet.",
+    "finding": "Differences favoured natural sounds for heart rate, blood pressure and respiratory rate; mean arterial pressure, perceived stress and oxygen saturation did not differ significantly.",
+    "limitations": "Mixed outcomes; abstract alone does not establish effects for this individual, a safe dose or absence of adverse effects.",
+    "ahr_application": "Researcher mapping: nature sounds are an optional permitted sound, not a demonstrated treatment for this case.",
+    "role": "action_support",
+    "context_fields": [
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [
+      "NATURE_SOUNDS"
+    ],
+    "condition": "sound_permission"
+  },
+  {
+    "id": "E03",
+    "kind": "research",
+    "topic": "physiology",
+    "source": "Shaffer & Ginsberg (2017)",
+    "proposal_key": "shaffer2017overview",
+    "doi": "10.3389/fpubh.2017.00258",
+    "url": "https://doi.org/10.3389/fpubh.2017.00258",
+    "verified_from": "Open-access article; selected metric and interpretation sections",
+    "checked_date": "2026-09-28",
+    "study_design": "Review of HRV metrics and norms",
+    "exposure": "Measurement duration, physiological influences and interpretation.",
+    "finding": "HRV interpretation depends on recording duration and context, including respiration.",
+    "limitations": "An RMSSD change alone does not establish psychological state or a patient-specific uncertainty interval.",
+    "ahr_application": "Context for cautious descriptive interpretation; no lighting or sound efficacy claim.",
+    "role": "context_only",
+    "context_fields": [
+      "physiology"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  },
+  {
+    "id": "E04",
+    "kind": "prototype_rule",
+    "topic": "lighting",
+    "source": "AHR prototype rule: retain brightness only",
+    "url": null,
+    "finding": "E04 supports lighting.action=NO_CHANGE only: keep the current brightness. Within that choice, an allowed tone may be retained or selected using recorded context/preferences, unless lighting is locked. E04 does not support INCREASE or DECREASE.",
+    "limitations": "Permission to retain brightness does not show that existing lighting supports rest or comfort. It is not evidence of a physiological benefit from any tone. For INCREASE or DECREASE, omit E04 and use a supplied/retrieved applicable action-support source; policy_ids may be empty.",
+    "lighting_actions": [
+      "NO_CHANGE"
+    ],
+    "sounds": [],
+    "condition": "always",
+    "role": "prototype_rule",
+    "context_fields": [
+      "lighting"
+    ]
+  },
+  {
+    "id": "E05",
+    "kind": "prototype_rule",
+    "topic": "sound",
+    "source": "AHR prototype design",
+    "url": null,
+    "finding": "Silence, retaining permissible existing sound, or offering any explicitly preferred allowed sound may respect patient choice. All active sounds remain subject to staff permission and patient prohibitions.",
+    "limitations": "Preference compatibility is not efficacy evidence. A stated preference does not require playback; explain a decision to retain silence when a permitted preference is supplied.",
+    "lighting_actions": [],
+    "sounds": [
+      "NONE_SILENCE",
+      "NO_CHANGE",
+      "PREFERRED_CALMING_MUSIC",
+      "NATURE_SOUNDS",
+      "WHITE_NOISE"
+    ],
+    "condition": "preference_compatible",
+    "role": "prototype_rule",
+    "context_fields": [
+      "sound"
+    ]
+  },
+  {
+    "id": "E06",
+    "kind": "prototype_rule",
+    "topic": "physiology",
+    "source": "AHR development convention",
+    "url": null,
+    "finding": "Report signed current-minus-reference changes; HR/RMSSD percentages use the reference denominator. Report EDA absolute change only. Missing or poor-quality pairs are unavailable.",
+    "limitations": "These calculations are descriptive. EDA percentage reporting is disabled by design, not because absolute comparisons are invalid.",
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always",
+    "role": "prototype_rule",
+    "context_fields": [
+      "physiology"
+    ]
+  },
+  {
+    "id": "E07",
+    "kind": "research",
+    "topic": "sound",
+    "source": "Papathanassoglou et al. (2025)",
+    "proposal_key": "papathanassoglou2025sound",
+    "doi": "10.1016/j.aucc.2024.101148",
+    "url": "https://doi.org/10.1016/j.aucc.2024.101148",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Systematic review: 59 articles, 37 music and 22 nonmusic",
+    "exposure": "Randomized studies of music and nonmusic sound; only one direct comparison.",
+    "finding": "Reported benefits across pain, sleep and stress/anxiety outcomes; a larger music literature does not establish superiority over nonmusic sound.",
+    "limitations": "Heterogeneous interventions and outcomes; no fixed AHR playback dose or individual benefit follows from the abstract.",
+    "ahr_application": "Researcher mapping: offer explicitly preferred calming music when permitted, without promising benefit.",
+    "role": "action_support",
+    "context_fields": [
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [
+      "PREFERRED_CALMING_MUSIC"
+    ],
+    "condition": "sound_permission"
+  },
+  {
+    "id": "E08",
+    "kind": "research",
+    "topic": "sound",
+    "source": "Ding et al. (2025)",
+    "proposal_key": "ding2025whitenoise",
+    "doi": "10.1016/j.sleep.2025.106869",
+    "url": "https://doi.org/10.1016/j.sleep.2025.106869",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Meta-analysis: 12 randomized trials, 1,301 participants across age groups",
+    "exposure": "White noise for sleep; adult, older-adult and infant populations.",
+    "finding": "Adult and older-adult pooled sleep-quality scores improved; adult results had substantial heterogeneity.",
+    "limitations": "Infant findings cannot simply transfer to adult hospital cases. Sleep outcomes do not establish acute stress relief or an exact device volume.",
+    "ahr_application": "Researcher mapping: white noise may support an explicitly stated sleep/rest goal with preference and permission.",
+    "role": "action_support",
+    "context_fields": [
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [
+      "WHITE_NOISE"
+    ],
+    "condition": "sleep_goal"
+  },
+  {
+    "id": "E09",
+    "kind": "research",
+    "topic": "sound",
+    "source": "Nien et al. (2026)",
+    "proposal_key": "nien2026whitenoise",
+    "doi": "10.1016/j.iccn.2025.104239",
+    "url": "https://doi.org/10.1016/j.iccn.2025.104239",
+    "verified_from": "Publisher abstract and study methods (corrected playback time)",
+    "checked_date": "2026-10-15",
+    "study_design": "Randomized trial: 58 ICU patients in Taiwan",
+    "exposure": "40–50 dB white noise from 23:00 to 06:00 for three consecutive nights versus routine care.",
+    "finding": "Some self-reported sleep measures improved during follow-up.",
+    "limitations": "Small single-setting trial; overnight sound is not equivalent to a 15-minute simulation. Volume percentage has no established conversion to decibels.",
+    "ahr_application": "Researcher mapping: optional preferred white noise for sleep/rest; do not copy exposure as a validated AHR dose.",
+    "role": "action_support",
+    "context_fields": [
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [
+      "WHITE_NOISE"
+    ],
+    "condition": "sleep_goal"
+  },
+  {
+    "id": "E10",
+    "kind": "research",
+    "topic": "sound",
+    "source": "Saskovets et al. (2025)",
+    "proposal_key": "saskovets2025sound",
+    "doi": "10.2196/69120",
+    "url": "https://doi.org/10.2196/69120",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Review: 34 clinical and laboratory studies",
+    "exposure": "Music and sound interventions across settings.",
+    "finding": "Physiological and self-reported responses vary with preferences, delivery and cultural context; some adverse responses were reported.",
+    "limitations": "Heterogeneous findings do not establish a universally beneficial or harmless sound.",
+    "ahr_application": "Context for preference-sensitive choice and cautious claims; not independent support for a specific sound option.",
+    "role": "context_only",
+    "context_fields": [
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  },
+  {
+    "id": "E11",
+    "kind": "research",
+    "topic": "lighting",
+    "source": "Martins et al. (2025)",
+    "proposal_key": "martins2025light",
+    "doi": "10.1016/j.neubiorev.2025.106241",
+    "url": "https://doi.org/10.1016/j.neubiorev.2025.106241",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Systematic review: 25 studies, all assessed at high risk of bias",
+    "exposure": "Light exposure and vagally mediated HRV in healthy and clinical populations.",
+    "finding": "Higher-illuminance blue light generally corresponded to lower vmHRV; lower-illuminance warm light showed potential increases, with inconsistent findings.",
+    "limitations": "High risk of bias and heterogeneity prevent treating warm tone as proven calming or diagnosing state from HRV.",
+    "ahr_application": "Context for uncertainty about tone; does not independently justify a brightness direction or a numerical setting.",
+    "role": "context_only",
+    "context_fields": [
+      "lighting"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  },
+  {
+    "id": "E12",
+    "kind": "research",
+    "topic": "lighting",
+    "source": "Linders et al. (2026)",
+    "proposal_key": "linders2026lighting",
+    "doi": "10.1016/j.iccn.2026.104421",
+    "url": "https://doi.org/10.1016/j.iccn.2026.104421",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Systematic review: 28 ICU studies, 14 intervention studies",
+    "exposure": "Naturalistic and intervention lighting research in intensive care.",
+    "finding": "Marked heterogeneity prevented definitive outcome conclusions and clear lighting-design guidance.",
+    "limitations": "ICU evidence cannot establish universal parameters or a guaranteed sleep benefit.",
+    "ahr_application": "Context for cautious transfer and the absence of a validated AHR lighting dose.",
+    "role": "context_only",
+    "context_fields": [
+      "lighting"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  },
+  {
+    "id": "E13",
+    "kind": "research",
+    "topic": "physiology",
+    "source": "Posada-Quintero & Chon (2020)",
+    "proposal_key": "posada2020innovations",
+    "doi": "10.3390/s20020479",
+    "url": "https://doi.org/10.3390/s20020479",
+    "verified_from": "Author abstract via PubMed/Europe PMC",
+    "checked_date": "2026-09-28",
+    "study_design": "Systematic review of electrodermal measurement and processing",
+    "exposure": "Tonic and phasic electrodermal activity and applications.",
+    "finding": "EDA reflects sympathetic sweat-gland activity and is used across multiple arousal-related applications.",
+    "limitations": "EDA alone is not a specific psychological stress diagnosis. The AHR absolute-only reporting rule is a prototype convention.",
+    "ahr_application": "Context for descriptive EDA interpretation, not intervention efficacy.",
+    "role": "context_only",
+    "context_fields": [
+      "physiology"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  },
+  {
+    "id": "E14",
+    "kind": "research",
+    "topic": "lighting/sound",
+    "source": "Mendonça et al. (2025)",
+    "proposal_key": "mendonca2025nursing",
+    "doi": "10.1111/inr.13062",
+    "url": "https://doi.org/10.1111/inr.13062",
+    "verified_from": "Publisher abstract, eligibility and selected intervention-table sections",
+    "checked_date": "2026-09-28",
+    "study_design": "Review: 13 studies, 1,975 hospitalized adults and older adults; noncritical wards",
+    "exposure": "Nursing interventions including environmental, sensory, educational and individualized care.",
+    "finding": "Reported sleep-focused approaches span multiple components, including light and noise management.",
+    "limitations": "Critical-care patients were excluded; multicomponent evidence cannot establish an isolated light/sound effect or AHR dose.",
+    "ahr_application": "Context for individualized care and staff review; not independent support for a particular model action.",
+    "role": "context_only",
+    "context_fields": [
+      "lighting",
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  },
+  {
+    "id": "E15",
+    "kind": "research",
+    "topic": "lighting/sound",
+    "source": "Wang et al. (2025)",
+    "proposal_key": "wang2025nurse",
+    "doi": "10.1111/nicc.70028",
+    "url": "https://doi.org/10.1111/nicc.70028",
+    "verified_from": "Publisher abstract",
+    "checked_date": "2026-09-28",
+    "study_design": "Before/after ICU quality-improvement project",
+    "exposure": "Nurse-led SLEEP bundle including noise/light reduction, sensory aids and pharmacological/nonpharmacological measures.",
+    "finding": "Reported sleep questionnaire scores rose from 62 to 70 after implementation.",
+    "limitations": "Bundle and before/after design do not isolate lighting or sound causality. Medication components are outside AHR.",
+    "ahr_application": "Context for staff-led multicomponent care, not evidence that this prototype reproduces the bundle.",
+    "role": "context_only",
+    "context_fields": [
+      "lighting",
+      "sound"
+    ],
+    "lighting_actions": [],
+    "sounds": [],
+    "condition": "always"
+  }
+]
