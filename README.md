@@ -128,7 +128,7 @@ The public repository intentionally does **not** include the raw nurse-response 
 
 This does not affect reproduction of model generation: the final notebook is explicitly structured so the nurse file is not read by inference, tools, validation or repair. It is loaded only in the final post-run comparison cell.
 
-The public `results/` folder contains non-identifying model and aggregate comparison summaries used in the report.
+The public `results/` folder contains model outputs and aggregate comparison summaries only. Participant-level nurse responses are not published.
 
 ## Reproducibility features
 
