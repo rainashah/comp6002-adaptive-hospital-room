@@ -5,11 +5,12 @@
 __pycache__/
 .ipynb_checkpoints/
 
-# Paid-run outputs and protected human-review data
+# Paid-run archives and protected raw human-review exports
 AHR_Luna_30_Study/
 *_RESULTS.zip
-*nurse*.csv
-*NURSE*.csv
+AHR_study_latest*.csv
+AHR_Experiment2_*NURSE*.csv
+*_nurse_raw.csv
 
 # OS/editor
 .DS_Store
