@@ -9,4 +9,4 @@
 | `05_mechanical_repair_replay.ipynb` | Targeted structured-output/calculation repair replay. |
 | `06_experiment2_final_agent_v4.ipynb` | Final controlled 12-case Experiment 2 architecture and formal run. |
 
-Historical raw outputs are preserved in the controlled research archive. This public marker-facing repository intentionally excludes the protected nurse-response CSV.
+Historical raw outputs are preserved in the controlled research archive. The repository includes the frozen inputs, selected run-level result summaries and minimal de-identified nurse comparator files needed to reproduce the reported agreement calculations.
