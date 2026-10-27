@@ -10,6 +10,7 @@ AHR is a software-only, non-clinical decision-support prototype. It uses structu
 
 ```text
 notebooks/
+  00_llm_candidate_reliability_screen.ipynb
   01_experiment1_context_v4_1.ipynb
   02_evidence_parity_v3_guardfix.ipynb
   03_state_aware_evidence_v4.ipynb
@@ -25,6 +26,7 @@ data/
   experiment2_evidence_table.json
   experiment2_nurse_comparator_deidentified.csv
 results/
+  model_selection_summary.csv
   experiment1_run_results_300.csv
   experiment2_run_results_60.csv
   controlled_pair_sensitivity_summary.csv
@@ -32,6 +34,7 @@ results/
 analysis/
   reproduce_alignment.py
 docs/
+  llm_candidate_screen_audit_2026-10-09.md
   experiment_register.md
 requirements.txt
 ```
@@ -53,6 +56,23 @@ OPENROUTER_API_KEY
 ```
 
 Do not commit API keys. In Colab, store the key in **Secrets** and grant the notebook access. The notebooks can also fall back to a secure `getpass` prompt.
+
+## Development-stage LLM selection
+
+Before the formal 30-case study, candidate model/provider configurations were screened on the same five development cases (`PILOT_201`-`PILOT_205`) using the same shared case adaptation, evidence, tools, output schema, validation rules and one baseline plus one agentic workflow per case.
+
+The purpose of this screen was **technical workflow reliability**, not nurse alignment or clinical appropriateness.
+
+- **GPT-6 Luna / OpenAI:** 10/10 final-valid workflows, all valid on the first answer; recorded API cost USD $0.01968.
+- **Gemini 3.8 Flash / Google AI Studio:** 5/10 final-valid workflows; failures included output-length truncation, duplicate JSON/schema problems and an input-size-blocked correction; recorded API cost USD $0.56152.
+- **Qwen3.8 27B / Cerebras:** not executed in the archived full screen because provider/preflight requirements were not satisfied; this is recorded as inconclusive rather than a model failure.
+
+Luna was therefore selected as the strongest **fully tested technical configuration** in the development screen and was frozen for the later formal experiments. This selection does not imply that Luna was clinically superior.
+
+Files:
+- `notebooks/00_llm_candidate_reliability_screen.ipynb`
+- `results/model_selection_summary.csv`
+- `docs/llm_candidate_screen_audit_2026-10-09.md`
 
 ## Reproduce the reported nurse-alignment metrics
 
@@ -162,7 +182,7 @@ The provider endpoint, model availability and prices can change over time, so a 
 
 ## Other experiment notebooks
 
-The remaining notebooks document the main methodological path without publishing every intermediate development version:
+The repository includes the final development-stage model-selection notebook plus the main methodological follow-up notebooks, without publishing every abandoned or superseded development version:
 
 - evidence parity and input-guard correction;
 - state-aware evidence validation;
