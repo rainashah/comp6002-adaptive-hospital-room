@@ -28,6 +28,7 @@ data/
 results/
   model_selection_summary.csv
   experiment1_run_results_300.csv
+  experiment1_repeatability_summary.csv
   experiment2_run_results_60.csv
   controlled_pair_sensitivity_summary.csv
   repeat_stability_by_case.csv
@@ -179,6 +180,20 @@ Run all cells again.
 The frozen notebook's final post-run comparison cell references the original archived nurse CSV and its hash. That frozen code is intentionally preserved unchanged. For reproduction from the public repository, use `analysis/reproduce_alignment.py`, which performs the same reported categorical agreement calculations from the published de-identified comparator.
 
 The provider endpoint, model availability and prices can change over time, so a later live run is a new stochastic execution of the same software logic rather than a guarantee of byte-identical outputs.
+
+
+## Repeatability / stochastic consistency
+
+The formal experiments deliberately repeated identical cases under the same frozen configuration to measure whether the LLM returned stable decisions rather than treating repeated runs as independent patients.
+
+Experiment 1 used **five repeats per case in both workflows** (30 cases × 2 workflows × 5 repeats = 300 executions). Restricting the case-level consistency summary to cases where all five repeats were technically valid:
+
+- **Agent:** 27/30 cases had all five valid; tone was unanimous in 27/27, lighting in 18/27, sound command in 20/27 and the full lighting+tone+sound triplet in 12/27.
+- **Baseline:** 24/30 cases had all five valid; tone was unanimous in 24/24, lighting in 16/24, sound command in 14/24 and the full triplet in 10/24.
+
+Experiment 2 used five repeats for each of 12 controlled cases. Tone and resulting sound state were unanimous in all 12 cases; lighting and clinical-review decisions were unanimous in 11/12 cases. The repeated executions are correlated stochastic runs, not independent patient observations.
+
+The frozen summaries are `results/experiment1_repeatability_summary.csv` and `results/repeat_stability_by_case.csv`.
 
 ## Other experiment notebooks
 
