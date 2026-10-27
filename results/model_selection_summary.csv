@@ -1,0 +1,4 @@
+candidate,provider,cases,workflows_attempted,valid_first_answers,final_valid_workflows,baseline_valid,agentic_valid,http_responses,recorded_api_cost_usd,selection_outcome
+GPT-6 Luna,OpenAI,5,10,10,10.0,5/5,5/5,16/16 HTTP 200,0.01968,SELECTED
+Gemini 3.8 Flash,Google AI Studio,5,10,5,5.0,4/5,1/5,19/19 HTTP 200,0.56152,NOT_SELECTED
+Qwen3.8 27B,Cerebras,0,0,0,,not run,not run,0,0.0,INCONCLUSIVE_PROVIDER_PREFLIGHT
