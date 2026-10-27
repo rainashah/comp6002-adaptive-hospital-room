@@ -1,6 +1,6 @@
 # COMP6002 Adaptive Hospital Room
 
-Marker-facing repository for **Adaptive Hospital Room: Agentic LLM Recommendations for Contextually Appropriate Lighting and Sound**, an individual Master of Artificial Intelligence project at Curtin University.
+Project and reproducibility repository for **Adaptive Hospital Room: Agentic LLM Recommendations for Contextually Appropriate Lighting and Sound**, an individual Master of Artificial Intelligence project at Curtin University.
 
 ## Scope
 
@@ -17,63 +17,109 @@ notebooks/
   05_mechanical_repair_replay.ipynb
   06_experiment2_final_agent_v4.ipynb
 data/
+  README.md
   experiment1_formal_30_cases.json
+  experiment1_evidence_table.json
+  experiment1_nurse_comparator_deidentified.csv
   experiment2_cases.json
-  evidence_table.json
+  experiment2_evidence_table.json
+  experiment2_nurse_comparator_deidentified.csv
 results/
+  experiment1_run_results_300.csv
   experiment2_run_results_60.csv
   controlled_pair_sensitivity_summary.csv
   repeat_stability_by_case.csv
-  experiment2_case_level_summary.csv
+analysis/
+  reproduce_alignment.py
 docs/
-  experiment2_findings.md
   experiment_register.md
 requirements.txt
 ```
-
-## Recommended reproduction target
-
-Use `notebooks/06_experiment2_final_agent_v4.ipynb`.
-
-Frozen formal design:
-
-- 12 synthetic controlled cases
-- 3 base situations × 2 environment conditions × 2 physiology conditions
-- 5 repeated executions per case
-- 60 formal agentic runs
-- state-aware evidence validation
-- at most one compact correction and one bounded mechanical repair
-- nurse comparator loaded only after model generation
-
-The recorded formal run produced **60/60 final-valid recommendations**, with **49/60 first-pass valid**.
 
 ## Environment and dependencies
 
 The notebooks were developed in Google Colab using Python 3.
 
-Install the small Python dependency set with:
+Install dependencies with:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The main notebook also contains its own `%pip` installation cell.
-
-For live calls, the notebook expects an **OpenRouter API key** named:
+For live model calls, the notebooks expect an **OpenRouter API key** named:
 
 ```text
 OPENROUTER_API_KEY
 ```
 
-Do not commit API keys. In Colab, store the key in **Secrets** and grant the notebook access. The notebook can also fall back to a secure `getpass` prompt.
+Do not commit API keys. In Colab, store the key in **Secrets** and grant the notebook access. The notebooks can also fall back to a secure `getpass` prompt.
 
-## Reproduction instructions
+## Reproduce the reported nurse-alignment metrics
 
-### 1. Offline validation — no paid API calls
+The repository includes the frozen run-level model outputs used in the main Experiment 1 and Experiment 2 comparisons, together with minimal de-identified nurse comparator files.
 
-Open `notebooks/06_experiment2_final_agent_v4.ipynb` in Google Colab.
+From the repository root:
 
-Keep:
+```bash
+python analysis/reproduce_alignment.py
+```
+
+This reproduces the reported valid-run alignment values, including:
+
+- Experiment 1 agent/baseline brightness, tone, strict sound, exact-command and resulting-sound agreement;
+- Experiment 2 brightness, tone, strict sound, resulting-sound, clinical-review and exact-triplet agreement.
+
+The de-identified comparator files contain only the categorical fields required for these calculations. Participant identifiers, access codes, UUIDs, timestamps, professional-background fields, receipt IDs, rationales and notes are not published.
+
+## Experiment 1
+
+### Frozen inputs
+
+- `data/experiment1_formal_30_cases.json` — exact frozen 30-case input dataset.
+- `data/experiment1_evidence_table.json` — original concise evidence/rule table.
+- `data/experiment1_nurse_comparator_deidentified.csv` — de-identified nurse choices used for agreement scoring.
+- `results/experiment1_run_results_300.csv` — frozen 300-run agent/baseline output summary.
+
+The 30-case input JSON SHA-256 is:
+
+`a09d532e3d6d8bcd051e91699d3fb9f933a1f0ae565f6d0f159fc2cb7c735b8b`
+
+The authoritative executable is:
+
+`notebooks/01_experiment1_context_v4_1.ipynb`
+
+The notebook contains the original frozen case/evidence payloads and exports `run_results_300.csv` after a full execution.
+
+## Experiment 2
+
+### Frozen inputs and outputs
+
+- `data/experiment2_cases.json` — exact frozen 12-case controlled synthetic dataset.
+- `data/experiment2_evidence_table.json` — frozen evidence table used by the final architecture.
+- `data/experiment2_nurse_comparator_deidentified.csv` — de-identified nurse choices used for agreement scoring.
+- `results/experiment2_run_results_60.csv` — frozen 60-run model summary.
+- `results/controlled_pair_sensitivity_summary.csv` — controlled environment/physiology sensitivity summary.
+- `results/repeat_stability_by_case.csv` — repeated-run stability summary.
+
+The authoritative executable is:
+
+`notebooks/06_experiment2_final_agent_v4.ipynb`
+
+Frozen formal design:
+
+- 12 synthetic controlled cases;
+- 3 base situations × 2 environment conditions × 2 physiology conditions;
+- 5 repeated executions per case;
+- 60 formal agentic runs;
+- state-aware evidence validation;
+- at most one compact correction and one bounded mechanical repair;
+- nurse comparator loaded only after model generation.
+
+The recorded formal run produced **60/60 final-valid recommendations**, with **49/60 first-pass valid**.
+
+### Offline validation — no paid API calls
+
+Open `notebooks/06_experiment2_final_agent_v4.ipynb` in Google Colab and keep:
 
 ```python
 RUN_STAGE = 'offline'
@@ -86,16 +132,9 @@ For an ephemeral/local run, set:
 USE_GOOGLE_DRIVE = False
 ```
 
-Run all cells through the offline validation section. The notebook checks:
+Run all cells through the offline validation section. The notebook checks the frozen case/evidence hashes, schemas, deterministic tools, state-aware retained-sound behavior, prompt-size guards and absence of nurse-comparator fields from model prompts.
 
-- 12-case frozen design
-- case/evidence hashes
-- schemas and deterministic tools
-- state-aware retained-sound behavior
-- prompt-size guards
-- absence of nurse-comparator fields from model prompts
-
-### 2. Smoke test — paid API call
+### Smoke test — paid API call
 
 Add `OPENROUTER_API_KEY`, then change only:
 
@@ -104,9 +143,9 @@ RUN_STAGE = 'smoke'
 APPROVE_PAID_CALLS = True
 ```
 
-Run all cells. Confirm the pilot ends as `VALID_SIMULATION` with `final_valid = true`.
+Run all cells and confirm the pilot ends as `VALID_SIMULATION` with `final_valid = true`.
 
-### 3. Formal 60-run experiment — paid API calls
+### Formal 60-run experiment — paid API calls
 
 After a successful smoke test, change only:
 
@@ -117,48 +156,40 @@ APPROVE_PAID_CALLS = True
 
 Run all cells again.
 
-The notebook writes a frozen run contract/fingerprint, logs each request/output, and is resume-safe. The provider endpoint, model availability and prices can change over time, so a later reproduction is a new stochastic execution of the same software logic rather than a guarantee of byte-identical outputs.
+The frozen notebook's final post-run comparison cell references the original archived nurse CSV and its hash. That frozen code is intentionally preserved unchanged. For reproduction from the public repository, use `analysis/reproduce_alignment.py`, which performs the same reported categorical agreement calculations from the published de-identified comparator.
 
-## Experiment 1 data
+The provider endpoint, model availability and prices can change over time, so a later live run is a new stochastic execution of the same software logic rather than a guarantee of byte-identical outputs.
 
-`data/experiment1_formal_30_cases.json` is the exact frozen 30-case input dataset embedded in the Experiment 1 notebook. Its SHA-256 is:
+## Other experiment notebooks
 
-`a09d532e3d6d8bcd051e91699d3fb9f933a1f0ae565f6d0f159fc2cb7c735b8b`
+The remaining notebooks document the main methodological path without publishing every intermediate development version:
 
-The notebook remains the authoritative executable artifact, but the separate JSON makes the formal dataset easier to inspect and reuse.
+- evidence parity and input-guard correction;
+- state-aware evidence validation;
+- compact correction replay;
+- mechanical repair replay.
 
-## Experiment 2 data
-
-`data/experiment2_cases.json` and `data/evidence_table.json` are exported from the exact frozen objects embedded in the final notebook. The notebook is the authoritative executable artifact.
-
-## Protected nurse comparator
-
-The public repository intentionally does **not** include the raw nurse-response CSV. It contains human-participant responses and is retained in the controlled project archive.
-
-This does not affect reproduction of model generation: the final notebook is explicitly structured so the nurse file is not read by inference, tools, validation or repair. It is loaded only in the final post-run comparison cell.
-
-The public `results/` folder contains model outputs and aggregate comparison summaries only. Participant-level nurse responses are not published.
+Historical experiments were not overwritten when the methodology changed; new conditions received new run labels.
 
 ## Reproducibility features
 
 The notebooks preserve or log:
 
-- exact model/provider identifier
-- prompts and evidence representation
-- deterministic tool definitions
-- output schema and validators
-- run labels and SHA-256 hashes
-- first-pass and final validity
-- correction/repair use
-- request counts, cost metadata and elapsed time where available
-
-Historical experiments were not overwritten when the methodology changed; new conditions received new run labels.
+- exact model/provider identifier;
+- prompts and evidence representation;
+- deterministic tool definitions;
+- output schema and validators;
+- run labels and SHA-256 hashes;
+- first-pass and final validity;
+- correction/repair use;
+- request counts, cost metadata and elapsed time where available.
 
 ## Privacy and safety
 
 - no identifiable patient records are included;
 - Experiment 2 is fully synthetic;
-- API keys and raw nurse responses are excluded;
+- the nurse comparator files are de-identified and limited to categorical scoring fields;
+- raw participant exports and API keys are excluded;
 - staff restrictions remain authoritative in the simulated workflow;
 - AHR is research software, not a clinical device.
 
