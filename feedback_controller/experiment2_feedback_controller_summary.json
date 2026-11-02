@@ -1,0 +1,13 @@
+{
+  "experiment_id": "EXP2_SYNTHETIC_12_V1",
+  "source_run": "AHR_Experiment2_FinalAgent_20261026_v4",
+  "representative_case_outputs": 12,
+  "representative_outputs_verified": 12,
+  "integration_pathways_per_case": 6,
+  "integration_scenarios": 72,
+  "integration_scenarios_passed": 72,
+  "simulated_reassessment_minutes": 15,
+  "new_llm_calls": 0,
+  "clinical_claim": false,
+  "note": "Follow-up states are scripted software-test conditions and are not patient observations or evidence of treatment effect."
+}
