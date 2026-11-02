@@ -1,0 +1,13 @@
+test_id,requirement,result,detail
+TC01,Invalid recommendation is withheld,PASS,
+TC02,Staff ACCEPT applies validated recommendation,PASS,
+TC03,Staff DECLINE leaves room unchanged and closes cycle,PASS,
+TC04,Staff OVERRIDE applies staff-selected state,PASS,
+TC05,IMPROVED maintains current state and monitors,PASS,
+TC06,First NO_RESPONSE retains state and continues monitoring,PASS,
+TC07,Second NO_RESPONSE requests staff assistance,PASS,
+TC08,Explicit REPEATED_NO_RESPONSE requests staff assistance,PASS,
+TC09,WORSENED requests staff assistance,PASS,
+TC10,Staff override remains authoritative during follow-up,PASS,
+TC11,Reassessment is blocked before staff decision,PASS,
+TC12,Override requires an explicit staff-selected room state,PASS,
