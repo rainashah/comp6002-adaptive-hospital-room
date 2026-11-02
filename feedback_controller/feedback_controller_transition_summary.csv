@@ -1,0 +1,9 @@
+Input / event,Controller action,Next state,Safety behaviour
+Invalid recommendation,WITHHOLD,STAFF_REVIEW_REQUIRED,No invalid model output is applied
+Staff ACCEPT,APPLY_VALIDATED_RECOMMENDATION,ACTIVE,Validated resulting state becomes active
+Staff DECLINE,NO_AHR_ENVIRONMENTAL_CHANGE,CLOSED,Current room state retained
+Staff OVERRIDE,APPLY_STAFF_OVERRIDE,ACTIVE,Staff-selected state takes precedence
+IMPROVED,MAINTAIN_AND_MONITOR,MONITORING,No new environmental recommendation
+First NO_RESPONSE,CONTINUE_MONITORING,MONITORING,No repeated environmental change
+Repeated NO_RESPONSE,REQUEST_STAFF_ASSISTANCE,STAFF_REVIEW_REQUIRED,Escalates rather than cycling room settings
+WORSENED,REQUEST_STAFF_ASSISTANCE,STAFF_REVIEW_REQUIRED,Escalates rather than cycling room settings
