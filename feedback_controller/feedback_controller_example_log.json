@@ -1,0 +1,66 @@
+[
+  {
+    "step": 1,
+    "elapsed_minutes": 0,
+    "event": "VALID_RECOMMENDATION_RECEIVED",
+    "controller_state": "AWAITING_STAFF_DECISION",
+    "controller_action": "NONE",
+    "no_response_count": 0,
+    "active_room_state": {
+      "brightness_pct": 65,
+      "tone": "NEUTRAL",
+      "sound": "NONE_SILENCE",
+      "volume_pct": 0,
+      "configured_duration_minutes": 0
+    },
+    "note": "Validated recommendation available for staff decision."
+  },
+  {
+    "step": 2,
+    "elapsed_minutes": 0,
+    "event": "STAFF_ACCEPTED",
+    "controller_state": "ACTIVE",
+    "controller_action": "APPLY_VALIDATED_RECOMMENDATION",
+    "no_response_count": 0,
+    "active_room_state": {
+      "brightness_pct": 55,
+      "tone": "WARM",
+      "sound": "NATURE_SOUNDS",
+      "volume_pct": 20,
+      "configured_duration_minutes": 15
+    },
+    "note": "Validated recommendation applied; reassessment scheduled after 15 simulated minutes."
+  },
+  {
+    "step": 3,
+    "elapsed_minutes": 15,
+    "event": "REASSESS_NO_RESPONSE",
+    "controller_state": "MONITORING",
+    "controller_action": "CONTINUE_MONITORING",
+    "no_response_count": 1,
+    "active_room_state": {
+      "brightness_pct": 55,
+      "tone": "WARM",
+      "sound": "NATURE_SOUNDS",
+      "volume_pct": 20,
+      "configured_duration_minutes": 15
+    },
+    "note": "First lack-of-response state; current room state retained and another 15-minute simulated reassessment is permitted."
+  },
+  {
+    "step": 4,
+    "elapsed_minutes": 30,
+    "event": "REASSESS_REPEATED_NO_RESPONSE",
+    "controller_state": "STAFF_REVIEW_REQUIRED",
+    "controller_action": "REQUEST_STAFF_ASSISTANCE",
+    "no_response_count": 2,
+    "active_room_state": {
+      "brightness_pct": 55,
+      "tone": "WARM",
+      "sound": "NATURE_SOUNDS",
+      "volume_pct": 20,
+      "configured_duration_minutes": 15
+    },
+    "note": "Repeated lack of response; no further automated environmental change is made."
+  }
+]
