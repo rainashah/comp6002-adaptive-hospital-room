@@ -10,9 +10,11 @@ This repository contains the public, de-identified artefacts supporting the COMP
 
 ## Post-evaluation controller integration
 
-- Deterministic controller implementation and unit tests.
-- Experiment 2 integration notebook and executable replay script.
-- Structured 72-scenario integration results and summaries.
+- Implementation: `src/feedback_controller/controller.py`.
+- Executable verification: `tests/test_feedback_controller.py` and `tests/test_feedback_controller_integration.py`.
+- Notebook interfaces: `notebooks/07_feedback_controller.ipynb` and `notebooks/08_feedback_controller_integration.ipynb`.
+- Structured evidence: `results/feedback_controller/`.
+- Documentation: `docs/feedback_controller.md`.
 - The complete 216-event audit log is retained in controlled Drive storage rather than duplicated publicly.
 
 ## Safety and privacy boundary

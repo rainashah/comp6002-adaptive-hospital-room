@@ -2,11 +2,15 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
 from typing import Dict, List
 
 import pandas as pd
 
-from controller import RoomState, recommendation_from_row, run_pathway
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from feedback_controller.controller import RoomState, recommendation_from_row, run_pathway
 
 PATHWAYS = [
     "ACCEPT_IMPROVED",
@@ -74,8 +78,8 @@ def replay(representative_csv: Path) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    folder = Path(__file__).resolve().parent
-    results = replay(folder / "results" / "experiment2_feedback_controller_representative_runs.csv")
+    results_file = ROOT / "results" / "feedback_controller" / "experiment2_feedback_controller_representative_runs.csv"
+    results = replay(results_file)
     print(results.groupby("pathway")["result"].value_counts().unstack(fill_value=0))
     print(f"Passed: {(results['result'] == 'PASS').sum()}/{len(results)}")
     if not (results["result"] == "PASS").all():

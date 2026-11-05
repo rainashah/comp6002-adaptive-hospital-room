@@ -1,11 +1,16 @@
 """Executable deterministic unit tests for the AHR feedback controller."""
 from __future__ import annotations
 
+from pathlib import Path
+import sys
 from typing import Dict, List
 
 import pandas as pd
 
-from controller import (
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from feedback_controller.controller import (
     ControllerState,
     FeedbackController,
     FollowUpState,

@@ -17,6 +17,15 @@ notebooks/
   04_compact_correction_replay.ipynb
   05_mechanical_repair_replay.ipynb
   06_experiment2_final_agent_v4.ipynb
+  07_feedback_controller.ipynb
+  08_feedback_controller_integration.ipynb
+src/
+  feedback_controller/
+    __init__.py
+    controller.py
+tests/
+  test_feedback_controller.py
+  test_feedback_controller_integration.py
 data/
   README.md
   experiment1_formal_30_cases.json
@@ -32,20 +41,7 @@ results/
   experiment2_run_results_60.csv
   controlled_pair_sensitivity_summary.csv
   repeat_stability_by_case.csv
-analysis/
-  reproduce_alignment.py
-docs/
-  llm_candidate_screen_audit_2026-10-09.md
-  experiment_register.md
-  final_reproducibility_manifest.md
-feedback_controller/
-  README.md
-  AHR_Feedback_Controller.ipynb
-  AHR_Experiment2_Feedback_Controller_Integration.ipynb
-  controller.py
-  unit_tests.py
-  integration_replay.py
-  results/
+  feedback_controller/
     feedback_controller_test_results.csv
     feedback_controller_transition_summary.csv
     feedback_controller_example_log.json
@@ -54,8 +50,17 @@ feedback_controller/
     experiment2_feedback_controller_pathway_summary.csv
     experiment2_feedback_controller_case_summary.csv
     experiment2_feedback_controller_representative_runs.csv
+analysis/
+  reproduce_alignment.py
+docs/
+  llm_candidate_screen_audit_2026-10-09.md
+  experiment_register.md
+  final_reproducibility_manifest.md
+  feedback_controller.md
 requirements.txt
 ```
+
+The numbered notebooks follow the project sequence. Reusable controller code is under `src/`, executable verification scripts are under `tests/`, and generated evidence is under `results/`.
 
 ## Environment and dependencies
 
@@ -67,7 +72,7 @@ pip install -r requirements.txt
 
 Live model experiments require an **OpenRouter API key** named `OPENROUTER_API_KEY`. Do not commit API keys. Store the key in Colab Secrets or supply it through the secure prompt in the notebooks.
 
-The feedback-controller notebooks use only the frozen Experiment 2 outputs and make no new LLM calls.
+The controller notebooks and tests use only the frozen Experiment 2 outputs and make no new LLM calls.
 
 ## Development-stage LLM selection
 
@@ -168,31 +173,31 @@ The frozen summaries are `results/experiment1_repeatability_summary.csv` and `re
 
 ## Deterministic feedback controller
 
-After the formal model evaluation, a deterministic post-recommendation controller was implemented as a separate human-in-the-loop software layer.
+After the formal model evaluation, a deterministic post-recommendation controller was implemented as a separate human-in-the-loop software layer. It receives an already validated recommendation and makes no new LLM calls.
 
-Staff may:
+Public verification from the repository root:
 
-- `ACCEPT` a validated recommendation;
-- `DECLINE` it and retain the current room state; or
-- `OVERRIDE` it with an explicit staff-selected state.
+```bash
+python tests/test_feedback_controller.py
+python tests/test_feedback_controller_integration.py
+```
 
-For accepted or overridden states, the controller applies a scripted 15-minute reassessment:
-
-- `IMPROVED` → maintain the active state and continue monitoring;
-- first `NO_RESPONSE` → continue monitoring without another room change;
-- repeated `NO_RESPONSE` → `STAFF_REVIEW_REQUIRED`;
-- `WORSENED` → `STAFF_REVIEW_REQUIRED`.
-
-Testing was deliberately deterministic:
-
+Recorded results:
 - **12/12 unit and transition tests passed**;
-- one representative final-valid output from each of the 12 Experiment 2 cases was exercised through six pathways;
+- one representative final-valid output from each of the 12 Experiment 2 cases was exercised through six scripted pathways;
 - **72/72 integration scenarios passed**;
 - **0 new LLM calls** were made.
 
-These are scripted software-test conditions. They are not patient observations, treatment outcomes or evidence that the 15-minute interval is clinically valid.
+These are scripted software-test conditions, not patient observations, treatment outcomes or evidence that the 15-minute interval is clinically valid.
 
-See `feedback_controller/README.md` for the exact files, organised outputs and reproduction sequence. The public replay can also be run with `python feedback_controller/unit_tests.py` and `python feedback_controller/integration_replay.py`. The complete 216-event integration audit log is retained in controlled project storage rather than duplicated in the public repository.
+Final controller artefacts:
+- implementation: `src/feedback_controller/controller.py`;
+- notebook interfaces: `notebooks/07_feedback_controller.ipynb` and `notebooks/08_feedback_controller_integration.ipynb`;
+- executable verification: `tests/test_feedback_controller.py` and `tests/test_feedback_controller_integration.py`;
+- structured evidence: `results/feedback_controller/`;
+- documentation: `docs/feedback_controller.md`.
+
+The complete 216-event integration audit log is retained in controlled project storage rather than duplicated in the public repository.
 
 ## Reproducibility features
 
