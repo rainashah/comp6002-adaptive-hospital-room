@@ -45,14 +45,15 @@ feedback_controller/
   controller.py
   unit_tests.py
   integration_replay.py
-  feedback_controller_test_results.csv
-  feedback_controller_transition_summary.csv
-  feedback_controller_example_log.json
-  experiment2_feedback_controller_summary.json
-  experiment2_feedback_controller_integration_results.csv
-  experiment2_feedback_controller_pathway_summary.csv
-  experiment2_feedback_controller_case_summary.csv
-  experiment2_feedback_controller_representative_runs.csv
+  results/
+    feedback_controller_test_results.csv
+    feedback_controller_transition_summary.csv
+    feedback_controller_example_log.json
+    experiment2_feedback_controller_summary.json
+    experiment2_feedback_controller_integration_results.csv
+    experiment2_feedback_controller_pathway_summary.csv
+    experiment2_feedback_controller_case_summary.csv
+    experiment2_feedback_controller_representative_runs.csv
 requirements.txt
 ```
 
@@ -191,7 +192,7 @@ Testing was deliberately deterministic:
 
 These are scripted software-test conditions. They are not patient observations, treatment outcomes or evidence that the 15-minute interval is clinically valid.
 
-See `feedback_controller/README.md` for the exact files and reproduction sequence. The public replay can also be run with `python feedback_controller/unit_tests.py` and `python feedback_controller/integration_replay.py`. The complete 216-event integration audit log is retained in controlled project storage rather than duplicated in the public repository.
+See `feedback_controller/README.md` for the exact files, organised outputs and reproduction sequence. The public replay can also be run with `python feedback_controller/unit_tests.py` and `python feedback_controller/integration_replay.py`. The complete 216-event integration audit log is retained in controlled project storage rather than duplicated in the public repository.
 
 ## Reproducibility features
 

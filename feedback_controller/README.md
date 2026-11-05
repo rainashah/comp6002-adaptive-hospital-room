@@ -8,19 +8,23 @@ The controller sits **after** the LLM recommendation and deterministic validatio
 
 ## Files
 
+### Executable artefacts
 - `AHR_Feedback_Controller.ipynb` — deterministic controller implementation plus 12 unit/transition tests.
 - `AHR_Experiment2_Feedback_Controller_Integration.ipynb` — loads representative final-valid outputs from all 12 frozen Experiment 2 cases and exercises six pathways per case.
 - `controller.py` — deterministic controller state machine.
 - `unit_tests.py` — executable 12-test suite.
 - `integration_replay.py` — public 72-scenario replay.
-- `feedback_controller_test_results.csv` — unit-test results.
-- `feedback_controller_transition_summary.csv` — unit-test transition summary.
-- `feedback_controller_example_log.json` — compact example audit log.
-- `experiment2_feedback_controller_summary.json` — integration-run summary.
-- `experiment2_feedback_controller_integration_results.csv` — all 72 integration scenarios.
-- `experiment2_feedback_controller_pathway_summary.csv` — pass counts by pathway.
-- `experiment2_feedback_controller_case_summary.csv` — pass counts by Experiment 2 case.
-- `experiment2_feedback_controller_representative_runs.csv` — selected frozen run used for each case.
+
+### Structured outputs
+Generated controller evidence is grouped under `results/`:
+- `results/feedback_controller_test_results.csv` — unit-test results.
+- `results/feedback_controller_transition_summary.csv` — unit-test transition summary.
+- `results/feedback_controller_example_log.json` — compact example audit log.
+- `results/experiment2_feedback_controller_summary.json` — integration-run summary.
+- `results/experiment2_feedback_controller_integration_results.csv` — all 72 integration scenarios.
+- `results/experiment2_feedback_controller_pathway_summary.csv` — pass counts by pathway.
+- `results/experiment2_feedback_controller_case_summary.csv` — pass counts by Experiment 2 case.
+- `results/experiment2_feedback_controller_representative_runs.csv` — selected frozen run used for each case.
 
 ## Tested pathways
 

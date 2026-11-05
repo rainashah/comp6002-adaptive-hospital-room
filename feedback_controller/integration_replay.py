@@ -75,7 +75,7 @@ def replay(representative_csv: Path) -> pd.DataFrame:
 
 if __name__ == "__main__":
     folder = Path(__file__).resolve().parent
-    results = replay(folder / "experiment2_feedback_controller_representative_runs.csv")
+    results = replay(folder / "results" / "experiment2_feedback_controller_representative_runs.csv")
     print(results.groupby("pathway")["result"].value_counts().unstack(fill_value=0))
     print(f"Passed: {(results['result'] == 'PASS').sum()}/{len(results)}")
     if not (results["result"] == "PASS").all():
